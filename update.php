@@ -28,11 +28,11 @@
         
         <label>Edit SCP Number</label>
         <br>
-        <textarea class="form-control" name="SCPno"><?php echo $row['SCPno'];?></textarea>
+        <textarea class="form-control" name="SCPno" required><?php echo $row['SCPno'];?></textarea>
         <br>
         <label>Edit Object Class</label>
         <br>
-        <textarea class="form-control" name="SCPclass"><?php echo $row['SCPclass'];?></textarea>
+        <textarea class="form-control" name="SCPclass" required><?php echo $row['SCPclass'];?></textarea>
         <br>
         <label>Edit SCP Name</label>
         <br>
@@ -44,10 +44,10 @@
         <input type="text" name="img" class="form-control" value="<?php echo $row['img'];?>">
         <br>        
         <label>Edit Special Containment Procedures</label>
-        <textarea class="form-control" name="Containment" rows="20"><?php echo $row['Containment'];?></textarea>
+        <textarea class="form-control" name="Containment" rows="20" required><?php echo $row['Containment'];?></textarea>
         <br>
         <label>Edit Description</label>
-        <textarea class="form-control" name="Description" rows="20"><?php echo $row['Description'];?></textarea>
+        <textarea class="form-control" name="Description" rows="20" required><?php echo $row['Description'];?></textarea>
         <br>
         <label>Edit The Other Relevant Information</label>
         <textarea class="form-control" name="Other" rows="20"><?php echo $row['Other'];?></textarea>
