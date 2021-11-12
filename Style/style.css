@@ -1,0 +1,133 @@
+.center 
+  {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+.orange
+  {
+    background-color: #F0B27A;
+  }
+
+.font1
+  {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  }
+
+.red
+  {
+    color: red;
+  }
+
+.indent
+  {
+    text-indent: 2cm;
+  }
+
+
+body
+{
+  margin:0;
+  padding:0;
+}
+.navbar
+{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+}
+
+.brand-title
+{
+  margin: .5rem;
+}
+
+.FontSize1
+{
+    font-weight:900;
+    font-size:300%;
+}
+
+.navbar-links ul
+{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li
+{
+ list-style: none;
+}
+
+.navbar-links li a
+{
+ text-decoration: none;
+ color: white;
+ padding: 1rem;
+ display: block;
+}
+
+.navbar-links li:hover
+{
+  background-color: #555;
+}
+
+.toggle-button
+{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display:none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 400px){
+  .toggle-button{
+    display: flex;
+  }
+
+  .navbar-links{
+    display: none;
+    width:100%;
+  }
+  .navbar
+  {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.navbar-links ul{
+ width:100%;
+ flex-direction: column; 
+}
+.navbar-links li{
+  text-align: center;
+}
+.navbar-links li a{
+  padding: .5rem 1rem;
+}
+.navbar-links.active{
+  display: flex;
+}
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  max-height: 500px;
+}

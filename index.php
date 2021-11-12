@@ -11,6 +11,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="Style/style.css" rel="stylesheet">
+
 
     <title>SCP Application</title>
   </head>
@@ -18,6 +20,18 @@
     <?php
     include "connection.php";
     ?>
+    <div class="container p-3"> 
+    <div class="row orange rounded center p-3">
+    <div class= "text-center brand-title"><h1>SCP Foundation</h1>
+    </div>
+    <h1 class='text-danger text-center'>Secure. Contain. Protect.</h1>
+           <div class='col'>
+
+                <img src='Images/SCP Foundation.jpg' width='50px' height='50px' class='img-fluid'/>
+            </div>
+    </div>
+ 
+    </div>
  <div class="row">   
     <div class="col">
         
@@ -42,7 +56,7 @@
 <!-- main content based on menu click -->
 
 
-<div class="row">
+<div class="row orange font1 p-3 rounded center">
     <div class="col">
         <?php 
         if(isset($_GET['link']))
@@ -73,133 +87,164 @@
             if($SCPname==null&&$img==null&&$Other==null)
                 {
                 echo "
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> Unavailable</h5>  
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>
                 
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> Unavailable</span></h5>                                
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
+                <p>                    
+                <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>  
                 
-                
-                <p>
-                    <a href='$update' class='btn btn-warning'>Update SCP Record</a>
-                    <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>
-                </p>
             ";
                 }
             else if($SCPname!=null&&$img!=null&&$Other==null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                                
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> $SCPname</h5>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' width='300px' height='115px' class='img-fluid'></p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                                   
+                echo " 
+                
+                 <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> $SCPname</span></h5>                                
+                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' class='responsive'></p> 
+                
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>      
+                
                 ";                                 
                 
             }
             else if($SCPname!=null&&$img==null&&$Other==null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                                
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> $SCPname</h5>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                              
+                echo "   
+               
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> $SCPname</span></h5>                                
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>     
+                
                 ";                                 
                 
             }
             else if($SCPname==null&&$img==null&&$Other!=null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                              
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> Unavailable</h5>   
-                                  
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Other Relevant Information:</b><br>$Other</p>                                
+                echo " 
+                
+                 <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> Unavailable</span></h5>                                
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Other Relevant Information:</h5><br><p class='indent'>$Other</p></div>                                
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>    
+                
                 ";                                 
                 
             }
             else if($SCPname==null&&$img!=null&&$Other==null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                                
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> Unavailable</h5>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' width='300px' height='115px' class='img-fluid'></p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                                 
+                echo "  
+                
+                 <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> Unavailable</span></h5>                                
+                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' class='responsive'></p>                               
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>  
                 ";                                 
                 
             }            
             else if($SCPname!=null&&$img==null&&$Other!=null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                                
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> $SCPname</h5>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Other Relevant Information:</b><br>$Other</p>                                
+                echo " 
+                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> $SCPname</span></h5>                                
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Other Relevant Information:</h5><br><p class='indent'>$Other</p></div>                                
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>  
+                
                 ";                                 
                 
             }
             else if($SCPname==null&&$img!=null&&$Other!=null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>  
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> Unavailable</h5>  
-                                      
-                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' width='300px' height='115px' class='img-fluid'></p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Other Relevant Information:</b><br>$Other</p>                                
+                echo "  
+                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> Unavailable</span></h5>                                
+                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' class='responsive'></p>                              
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Other Relevant Information:</h5><br><p class='indent'>$Other</p></div>                                
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>  
+               
                 ";                                 
                 
             }
            
             else if($SCPname!=null&&$img!=null&&$Other!=null)                
             {                                                   
-                echo "                
-                <h1 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b> $SCPno</h1>                
-                <h3 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b> $SCPclass</h3>                                
-                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b> $SCPname</h5>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' width='300px' height='115px' class='img-fluid'></p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Special Containment Procedures:</b><br>$Containment</p>                                
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Description:</b><br>$Description</p>                  
-                <p class='border border-secondary shadow rounded p-3 bg-light'><b>Other Relevant Information:</b><br>$Other</p>                                
+                echo "
+                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Number:</b><span class='red'> $SCPno</span></h5>                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Class:</b><span class='red'> $SCPclass</span></h5>                                
+                <h5 class='border border-secondary shadow rounded p-3 bg-light'><b>SCP Name:</b><span class='red'> $SCPname</span></h5>                                
+                <p class='border border-secondary shadow rounded p-3 bg-light'><img src='$img' class='responsive'></p>                              
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Special Containment Procedures:</h5><br><p class='indent'>$Containment</p></div>
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Description:</h5><br><p class='indent'>$Description</p></div>     
+                <br>
+                <div class='border border-secondary shadow rounded p-3 bg-light'><h5>Other Relevant Information:</h5><br><p class='indent'>$Other</p></div>                                
+                <br>
                 <p>                    
                 <a href='$update' class='btn btn-warning'>Update SCP Record</a>                    
-                <a href='$delete' class='btn btn-warning'>Delete SCP Record</a>                
-                </p>            
+                <a href='$delete' class='btn btn-danger'>Delete SCP Record</a>                
+                </p>  
+                
                 ";                                 
                 
             }
@@ -208,7 +253,7 @@
         {
             echo "
             <div class='col border rounded shadow p-3 m-2 form-group bg-dark white'>
-                <h1 class='text-danger'>Welcome to SCP</h1>
+                <h5 class='text-danger'>Welcome to SCP</h5>
                 <p class='text-danger'>Secure.Contain.Protect</p>
                 <img src='Images/SCP Foundation.jpg' width='400px' height='230px' class='img-fluid'/>
             </div>
